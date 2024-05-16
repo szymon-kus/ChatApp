@@ -1,0 +1,94 @@
+body{
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+    color: white;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+
+header{
+    text-align: center;
+    margin: auto;
+    font-size: 2.8em;
+    margin-top: 50px;
+    color: hsl(0, 0%, 90%);
+    transition: color 1s ease;
+}
+
+header:hover{
+    color: white;
+}
+
+/* Main */
+
+#mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    margin: auto;
+    border: 3px solid gray;
+    box-shadow: 5px 5px 10px rgb(94, 94, 94),
+    -5px -5px 10px rgb(94, 94, 94);
+    padding-bottom: 20px;
+}
+
+#registerLoginContainer{
+    width: 80%;
+    text-align: center;
+}
+
+#Signup{
+    font-size: 2.2em;
+    margin-top: 20px;
+    color: hsl(0, 0%, 90%);
+    transition: color 1s ease;
+}
+
+#Signup:hover{
+    color: white;
+}
+
+.firstInput{
+    margin-top: -7px;
+}
+
+input{
+    width: 90%;
+    font-size: 1.7em;
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+button{
+    width: 90%;
+    font-size: 1.5em;
+    margin-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: hsl(219, 78%, 48%);
+    color: white;
+    border: none;
+}
+
+button:active{
+    border: 1px solid white;
+}
+
+
+#LoginLink{
+    font-size: 1.5em;
+}
+
+a{
+    text-decoration: none;
+    color: hsl(219, 78%, 48%);
+}
+
+a:active{
+    color: hsl(219, 78%, 68%);
+}
+
+
+
