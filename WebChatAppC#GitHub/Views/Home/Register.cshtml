@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/RegisterLogin.css" />
+</head>
+<body>
+    <header>
+        <h1>Welcome to ChatGPT</h1>
+    </header>
+
+    <main>
+        <div id="mainContainer">
+            <div id="registerLoginContainer">
+                <p id="Signup">Signup</p>
+                <input class="firstInput" type="text" placeholder="Username">
+                <input type="text" placeholder="Create password">
+                <input type="text" placeholder="Confirm password">
+                <button>Signup</button>
+                <p id="LoginLink">Already have an account ? <a asp-controller="Home" asp-action="Login">Login</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
