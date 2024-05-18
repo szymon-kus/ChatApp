@@ -28,3 +28,5 @@ C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitH
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitHub\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.pdb
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitHub\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.genruntimeconfig.cache
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitHub\WebChatAppC#GitHub\obj\Debug\net8.0\ref\WebChatAppC#GitHub.dll
+C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitHub\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.sourcelink.json
+C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\WebChatAppC#GitHub\WebChatAppC#GitHub\bin\Debug\net8.0\users\user.json

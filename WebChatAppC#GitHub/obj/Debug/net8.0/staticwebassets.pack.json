@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\WebChatAppC#GitHub.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\wwwroot\\css\\Chat.css",
+      "PackagePath": "staticwebassets\\css\\Chat.css"
+    },
+    {
       "Id": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\wwwroot\\css\\RegisterLogin.css",
       "PackagePath": "staticwebassets\\css\\RegisterLogin.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yv5n4Ms2z1AJVt07AHxOAHN3P13xi4ykk1ONdmDbdHQ=",
+  "Hash": "wTLtM8fgpWIYD2tHwpXxRkdSdNMelWJI1BUSCT83VOA=",
   "Source": "WebChatAppC#GitHub",
   "BasePath": "_content/WebChatAppC#GitHub",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebChatAppC#GitHub.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\wwwroot\\css\\Chat.css",
+      "SourceId": "WebChatAppC#GitHub",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\wwwroot\\",
+      "BasePath": "_content/WebChatAppC#GitHub",
+      "RelativePath": "css/Chat.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Chat.css"
     },
     {
       "Identity": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\wwwroot\\css\\RegisterLogin.css",

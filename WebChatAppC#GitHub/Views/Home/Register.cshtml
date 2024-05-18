@@ -2,8 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model RegisterModel
+
 <head>
-    <link rel="stylesheet" href="~/css/RegisterLogin.css" />
+    <link rel="stylesheet" href="~/css/RegisterLogin.css"/>
 </head>
 <body>
     <header>
@@ -14,13 +16,21 @@
         <div id="mainContainer">
             <div id="registerLoginContainer">
                 <p id="Signup">Signup</p>
-                <input class="firstInput" type="text" placeholder="Username">
-                <input type="text" placeholder="Create password">
-                <input type="text" placeholder="Confirm password">
-                <button>Signup</button>
-                <p id="LoginLink">Already have an account ? <a asp-controller="Home" asp-action="Login">Login</a></p>
+                <form asp-action="Register" method="post">
+                    <input class="firstInput" asp-for="Username" placeholder="Username"/>
+                    <span asp-validation-for="Username" class="text-danger"></span>
+
+                    <input type="password" asp-for="Password" placeholder="Create password"/>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+
+                    <input type="password" asp-for="ConfirmPassword" placeholder="Confirm password"/>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+
+                    <button type="submit">Signup</button>
+                </form>
+                <p id="LoginLink">Already have an account? <a asp-controller="Home" asp-action="Login">Login</a></p>
             </div>
         </div>
     </main>
 </body>
-</html>
+
