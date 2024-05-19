@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AnoTbujup1RVcrGYcuTGDg3FvydMgsec0z0NO7v3l6AbPAp9DiPfXnEYSE6OUi+dAzkUZXWmtUI6xCCuGbyCQA==",
+  "dgSpecHash": "f2dqClaJ046hj3OhJo6pkqrh3BEU/HeCit0mAejkqBlTI0XsMt+34r7/ak0IAa7fuHqgfEANJqNMzfe3fPFgHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/WebChatAppC#GitHub/WebChatAppC#GitHub.csproj",
+  "expectedPackageFiles": [
+    "/Users/szymonkus/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

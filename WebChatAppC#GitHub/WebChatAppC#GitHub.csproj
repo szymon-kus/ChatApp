@@ -7,4 +7,12 @@
     <RootNamespace>WebChatAppC_GitHub</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="users\" />
+  </ItemGroup>
+
 </Project>

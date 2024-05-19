@@ -1,26 +1,27 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+ViewData["Title"] = "Login";
 }
-
+<html>
 <head>
     <link rel="stylesheet" href="~/css/RegisterLogin.css" />
 </head>
 <body>
-    <header>
-        <h1>Welcome to ChatGPT</h1>
-    </header>
+<header>
+    <h1>Welcome to ChatGPT</h1>
+</header>
 
-    <main>
-        <div id="mainContainer">
-            <div id="registerLoginContainer">
-                <p id="Signup">Login</p>
-                <input class="firstInput" type="text" placeholder="Username">
-                <input type="text" placeholder="Password">
-                <button>Login</button>
-                <p id="LoginLink">Don't have an account ? <a asp-controller="Home" asp-action="Register">Register</a></p>
-            </div>
+<main>
+    <div id="mainContainer">
+        <div id="registerLoginContainer">
+            <p id="Signup">Login</p>
+            <form asp-action="Login" method="post">
+                <input class="firstInput" type="text" name="Username" placeholder="Username">
+                <input type="password" name="Password" placeholder="Password">
+                <button type="submit">Login</button>
+            </form>
+            <p id="LoginLink">Don't have an account ? <a asp-controller="Home" asp-action="Register">Register</a></p>
         </div>
-    </main>
+    </div>
+</main>
 </body>
 </html>
-
