@@ -1,45 +1,79 @@
 ﻿@{
-ViewData["Title"] = "Chat";
-var loggedInUser = ViewBag.LoggedInUser;
+    ViewData["Title"] = "Chat";
+    var loggedInUser = ViewBag.LoggedInUser;
 }
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="~/css/Chat.css" />
-    <title>@ViewData["Title"] - ChatGPT</title>
+    <title>Chat Application</title>
 </head>
 <body>
-<header>
-    <h1>Chat</h1>
-</header>
-<main>
-    <div class="container">
-        <div class="user-list">
-            <h2>Users</h2>
-            <ul id="userList">
-                @foreach (var user in ViewBag.Users)
-                {
-                <li>
-                    <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
-                    @user.Username
-                </li>
+    <main>
+        <div id="chatContainer">
+            <div id="user-list">
+                <h2 id="friendsText">Users</h2>
+                <ul id="userList">
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <li>
+                            <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
+                            @user.Username
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="chat-window">
+                <div id="upperNameField">
+                    <div id="usernameContainer">
+                        <p id="usernameText">Username</p>
+                    </div>
+                    <div id="usernameTextContainer">
+                        <p id="websiteName">ChatGpt</p>
+                    </div>
+                </div>
+                <div id="chatMessagesContainer"></div>
+                <div id="chatInput">
+                    <input type="hidden" id="loggedInUser" value="@loggedInUser" />
+                    <input type="text" id="messageInput" placeholder="Type your message here..." />
+                    <button id="sendButton" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        console.log("chat.js loaded");
+
+        let messageInput = document.getElementById('messageInput');
+        let chatMessagesContainer = document.getElementById('chatMessagesContainer');
+        let loggedInUser = document.getElementById('loggedInUser').value;
+
+        function enterMessage() {
+
+            messageInput.addEventListener("keydown", event => {
+                if (event.key === "Enter") {
+                    if (messageInput.value.trim() !== '') {
+                        let chatMessage = document.createElement('div');
+                        chatMessage.classList.add("chatMessage");
+                        chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageInput.value}`;
+                        chatMessagesContainer.appendChild(chatMessage);
+                        messageInput.value = '';
+                    }
                 }
-            </ul>
-        </div>
-        <div class="chat-window">
-            <div id="chatMessages">
-                <!-- Wiadomości czatu będą tutaj -->
-            </div>
-            <div id="chatInput">
-                <input type="hidden" id="loggedInUser" value="@loggedInUser" />
-                <input type="text" id="messageInput" placeholder="Type your message here..." />
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </div>
-</main>
-<script src="~/js/chat.js"></script>
+            })
+        }
+
+        function sendMessage() {
+            console.log("sendMessage function called");
+
+            if (messageInput.value.trim() !== '') {
+                let chatMessage = document.createElement('div');
+                chatMessage.classList.add("chatMessage");
+                chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageInput.value}`;
+                chatMessagesContainer.appendChild(chatMessage);
+                messageInput.value = '';
+            }
+        }
+
+        enterMessage();
+    </script>
 </body>
-</html>
