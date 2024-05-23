@@ -45,7 +45,7 @@ namespace WebChatAppC_GitHub.Controllers
                 Password = model.Password
             };
 
-            users.Add(model);
+            users.Add(userToSave);
             var updatedUsersJson = JsonSerializer.Serialize(users);
             System.IO.File.WriteAllText(usersFolderFilePath, updatedUsersJson);
 
@@ -99,9 +99,55 @@ namespace WebChatAppC_GitHub.Controllers
             }
 
             var loggedInUser = HttpContext.Session.GetString("LoggedInUser");
+            var loggedInUserMessages = users.FirstOrDefault(u => u.Username == loggedInUser)?.Messages;
+
             ViewBag.Users = users;
             ViewBag.LoggedInUser = loggedInUser;
+            ViewBag.Messages = loggedInUserMessages;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult SendMessage([FromBody] SendMessageRequest request)
+        {
+            var loggedInUser = HttpContext.Session.GetString("LoggedInUser");
+
+            if (string.IsNullOrEmpty(loggedInUser) || string.IsNullOrEmpty(request.Receiver) || string.IsNullOrEmpty(request.MessageContent))
+            {
+                return BadRequest();
+            }
+
+            var users = new List<RegisterModel>();
+
+            if (System.IO.File.Exists(usersFolderFilePath))
+            {
+                var existingUsersJson = System.IO.File.ReadAllText(usersFolderFilePath);
+                users = JsonSerializer.Deserialize<List<RegisterModel>>(existingUsersJson);
+            }
+
+            var senderUser = users.FirstOrDefault(u => u.Username == loggedInUser);
+            var receiverUser = users.FirstOrDefault(u => u.Username == request.Receiver);
+
+            if (senderUser == null || receiverUser == null)
+            {
+                return NotFound();
+            }
+
+            var message = new Message
+            {
+                Sender = loggedInUser,
+                Receiver = request.Receiver,
+                Content = request.MessageContent,
+                Timestamp = DateTime.Now
+            };
+
+            senderUser.Messages.Add(message);
+            receiverUser.Messages.Add(message);
+
+            var updatedUsersJson = JsonSerializer.Serialize(users);
+            System.IO.File.WriteAllText(usersFolderFilePath, updatedUsersJson);
+
+            return Ok();
         }
 
         private void usersFolderFilePathExists()
@@ -115,8 +161,14 @@ namespace WebChatAppC_GitHub.Controllers
 
             if (!System.IO.File.Exists(usersFolderFilePath))
             {
-                System.IO.File.WriteAllText(usersFolderFilePath, "[]"); // pusty array json
+                System.IO.File.WriteAllText(usersFolderFilePath, "[]");
             }
         }
+    }
+
+    public class SendMessageRequest
+    {
+        public string Receiver { get; set; }
+        public string MessageContent { get; set; }
     }
 }

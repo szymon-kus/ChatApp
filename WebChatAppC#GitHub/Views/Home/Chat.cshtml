@@ -1,6 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "Chat";
-    var loggedInUser = ViewBag.LoggedInUser;
+ViewData["Title"] = "Chat";
+var loggedInUser = ViewBag.LoggedInUser;
 }
 
 <head>
@@ -8,72 +8,103 @@
     <title>Chat Application</title>
 </head>
 <body>
-    <main>
-        <div id="chatContainer">
-            <div id="user-list">
-                <h2 id="friendsText">Users</h2>
-                <ul id="userList">
-                    @foreach (var user in ViewBag.Users)
-                    {
-                        <li>
-                            <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
-                            @user.Username
-                        </li>
-                    }
-                </ul>
+<main>
+    <div id="chatContainer">
+        <div id="user-list">
+            <h2 id="friendsText">Users</h2>
+            <ul id="userList">
+                @foreach (var user in ViewBag.Users)
+                {
+                <li class="user-item" data-username="@user.Username">
+                    <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
+                    @user.Username
+                </li>
+                }
+            </ul>
+        </div>
+        <div class="chat-window">
+            <div id="upperNameField">
+                <div id="usernameContainer">
+                    <p id="usernameText">Username</p>
+                </div>
+                <div id="usernameTextContainer">
+                    <p id="websiteName">ChatGpt</p>
+                </div>
             </div>
-            <div class="chat-window">
-                <div id="upperNameField">
-                    <div id="usernameContainer">
-                        <p id="usernameText">Username</p>
-                    </div>
-                    <div id="usernameTextContainer">
-                        <p id="websiteName">ChatGpt</p>
-                    </div>
+            <div id="chatMessagesContainer">
+                @foreach (var message in ViewBag.Messages)
+                {
+                <div class="chatMessage">
+                    <strong>@message.Sender:</strong> @message.Content <em>(@message.Timestamp)</em>
                 </div>
-                <div id="chatMessagesContainer"></div>
-                <div id="chatInput">
-                    <input type="hidden" id="loggedInUser" value="@loggedInUser" />
-                    <input type="text" id="messageInput" placeholder="Type your message here..." />
-                    <button id="sendButton" onclick="sendMessage()">Send</button>
-                </div>
+                }
+            </div>
+            <div id="chatInput">
+                <input type="hidden" id="loggedInUser" value="@loggedInUser" />
+                <input type="text" id="receiverInput" placeholder="Receiver..." />
+                <input type="text" id="messageInput" placeholder="Type your message here..." />
+                <button id="sendButton" onclick="sendMessage()">Send</button>
             </div>
         </div>
-    </main>
-    <script>
-        console.log("chat.js loaded");
+    </div>
+</main>
+<script>
+    console.log("chat.js loaded");
 
-        let messageInput = document.getElementById('messageInput');
-        let chatMessagesContainer = document.getElementById('chatMessagesContainer');
-        let loggedInUser = document.getElementById('loggedInUser').value;
+    let messageInput = document.getElementById('messageInput');
+    let receiverInput = document.getElementById('receiverInput');
+    let chatMessagesContainer = document.getElementById('chatMessagesContainer');
+    let loggedInUser = document.getElementById('loggedInUser').value;
 
-        function enterMessage() {
-
-            messageInput.addEventListener("keydown", event => {
-                if (event.key === "Enter") {
-                    if (messageInput.value.trim() !== '') {
-                        let chatMessage = document.createElement('div');
-                        chatMessage.classList.add("chatMessage");
-                        chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageInput.value}`;
-                        chatMessagesContainer.appendChild(chatMessage);
-                        messageInput.value = '';
-                    }
-                }
-            })
-        }
-
-        function sendMessage() {
-            console.log("sendMessage function called");
-
-            if (messageInput.value.trim() !== '') {
-                let chatMessage = document.createElement('div');
-                chatMessage.classList.add("chatMessage");
-                chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageInput.value}`;
-                chatMessagesContainer.appendChild(chatMessage);
-                messageInput.value = '';
+    function enterMessage() {
+        messageInput.addEventListener("keydown", event => {
+            if (event.key === "Enter") {
+                sendMessage();
             }
+        });
+    }
+
+    async function sendMessage() {
+        console.log("sendMessage function called");
+
+        let receiver = receiverInput.value.trim();
+        let messageContent = messageInput.value.trim();
+
+        if (receiver === '' || messageContent === '') {
+            return;
         }
 
-        enterMessage();
-    </script>
+        let response = await fetch('/Home/SendMessage', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ receiver, messageContent })
+        });
+
+        if (response.ok) {
+            let chatMessage = document.createElement('div');
+            chatMessage.classList.add("chatMessage");
+            chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageContent}`;
+            chatMessagesContainer.appendChild(chatMessage);
+            messageInput.value = '';
+            receiverInput.value = '';
+        } else {
+            console.error("Failed to send message");
+        }
+    }
+
+    function addUserClickHandlers() {
+        let userItems = document.querySelectorAll('.user-item');
+        userItems.forEach(item => {
+            item.addEventListener('click', () => {
+                let username = item.getAttribute('data-username');
+                receiverInput.value = username;
+            });
+        });
+    }
+
+    enterMessage();
+    addUserClickHandlers();
+</script>
 </body>

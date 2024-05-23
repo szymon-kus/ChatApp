@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using WebChatAppC_GitHub.Models;
 using WebChatAppC_GitHub.Password_Validation;
 
 public class RegisterModel
@@ -17,4 +18,5 @@ public class RegisterModel
     [Compare("Password", ErrorMessage = "Password and confirmation password do not match.")]
     [JsonIgnore]
     public string ConfirmPassword { get; set; }
+    public List<Message> Messages { get; set; } = new List<Message>();
 }

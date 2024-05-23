@@ -65,38 +65,73 @@ C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/WebChatAppC#GitH
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.AssemblyReference.cache
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CopyComplete
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/users/user.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\appsettings.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\users\user.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.staticwebassets.runtime.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.exe
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.deps.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.runtimeconfig.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.dll
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\WebChatAppC#GitHub.pdb
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.csproj.AssemblyReference.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.AssemblyInfoInputs.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.AssemblyInfo.cs
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.csproj.CoreCompileInputs.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.RazorAssemblyInfo.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.RazorAssemblyInfo.cs
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.sourcelink.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets\msbuild.WebChatAppC#GitHub.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets\msbuild.build.WebChatAppC#GitHub.props
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebChatAppC#GitHub.props
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebChatAppC#GitHub.props
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\scopedcss\bundle\WebChatAppC#GitHub.styles.css
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\scopedcss\projectbundle\WebChatAppC#GitHub.bundle.scp.css
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatA.7001288B.Up2Date
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.dll
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\refint\WebChatAppC#GitHub.dll
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.pdb
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.genruntimeconfig.cache
-C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\TestBranch\WebChatAppC#GitHub\obj\Debug\net8.0\ref\WebChatAppC#GitHub.dll
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/appsettings.Development.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/appsettings.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/users/user.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.staticwebassets.runtime.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.exe
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.deps.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.runtimeconfig.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.dll
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.pdb
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/bin/Debug/net8.0/Newtonsoft.Json.dll
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.AssemblyReference.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.GeneratedMSBuildEditorConfig.editorconfig
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfoInputs.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfo.cs
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CoreCompileInputs.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.MvcApplicationPartsAssemblyInfo.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.RazorAssemblyInfo.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.RazorAssemblyInfo.cs
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.sourcelink.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.build.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.development.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.WebChatAppC#GitHub.Microsoft.AspNetCore.StaticWebAssets.props
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.build.WebChatAppC#GitHub.props
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WebChatAppC#GitHub.props
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.WebChatAppC#GitHub.props
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.pack.json
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/bundle/WebChatAppC#GitHub.styles.css
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/projectbundle/WebChatAppC#GitHub.bundle.scp.css
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatA.7001288B.Up2Date
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.dll
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/refint/WebChatAppC#GitHub.dll
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.pdb
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.genruntimeconfig.cache
+C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebChatAppC#GitHub/obj/Debug/net8.0/ref/WebChatAppC#GitHub.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/appsettings.Development.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/appsettings.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/users/user.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.staticwebassets.runtime.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.deps.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.runtimeconfig.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.pdb
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.AssemblyReference.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.GeneratedMSBuildEditorConfig.editorconfig
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfoInputs.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfo.cs
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CoreCompileInputs.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.MvcApplicationPartsAssemblyInfo.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.RazorAssemblyInfo.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.RazorAssemblyInfo.cs
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.sourcelink.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.build.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.development.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.WebChatAppC#GitHub.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.build.WebChatAppC#GitHub.props
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WebChatAppC#GitHub.props
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.WebChatAppC#GitHub.props
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/bundle/WebChatAppC#GitHub.styles.css
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/scopedcss/projectbundle/WebChatAppC#GitHub.bundle.scp.css
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CopyComplete
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/refint/WebChatAppC#GitHub.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.pdb
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.genruntimeconfig.cache
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/ref/WebChatAppC#GitHub.dll
