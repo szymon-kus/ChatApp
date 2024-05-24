@@ -136,4 +136,3 @@ C:/Users/grzyb/Documents/Programowanie/C#/.vs/WebAppChatProject/TestBranch/WebCh
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.genruntimeconfig.cache
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/obj/Debug/net8.0/ref/WebChatAppC#GitHub.dll
 /Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/System.Net.WebSockets.WebSocketProtocol.dll
-/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/WebChatAppC#GitHub/bin/Debug/net8.0/global.json
