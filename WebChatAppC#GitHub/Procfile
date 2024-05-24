@@ -1,1 +1,1 @@
-web: dotnet WebChatAppC#GitHub.dll
+web: dotnet my-web-chat-app.dll
