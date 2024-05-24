@@ -1,6 +1,7 @@
 ﻿@{
 ViewData["Title"] = "Chat";
 var loggedInUser = ViewBag.LoggedInUser;
+var messages = ViewBag.Messages;
 }
 
 <head>
@@ -15,7 +16,7 @@ var loggedInUser = ViewBag.LoggedInUser;
             <ul id="userList">
                 @foreach (var user in ViewBag.Users)
                 {
-                <li class="user-item" data-username="@user.Username">
+                <li onclick="setReceiver('@user.Username')">
                     <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
                     @user.Username
                 </li>
@@ -32,16 +33,19 @@ var loggedInUser = ViewBag.LoggedInUser;
                 </div>
             </div>
             <div id="chatMessagesContainer">
-                @foreach (var message in ViewBag.Messages)
+                @if (messages != null)
+                {
+                @foreach (var message in messages)
                 {
                 <div class="chatMessage">
-                    <strong>@message.Sender:</strong> @message.Content <em>(@message.Timestamp)</em>
+                    <strong>@message.Sender:</strong> @message.Content
                 </div>
+                }
                 }
             </div>
             <div id="chatInput">
                 <input type="hidden" id="loggedInUser" value="@loggedInUser" />
-                <input type="text" id="receiverInput" placeholder="Receiver..." />
+                <input type="hidden" id="receiver" value="" />
                 <input type="text" id="messageInput" placeholder="Type your message here..." />
                 <button id="sendButton" onclick="sendMessage()">Send</button>
             </div>
@@ -52,9 +56,13 @@ var loggedInUser = ViewBag.LoggedInUser;
     console.log("chat.js loaded");
 
     let messageInput = document.getElementById('messageInput');
-    let receiverInput = document.getElementById('receiverInput');
     let chatMessagesContainer = document.getElementById('chatMessagesContainer');
     let loggedInUser = document.getElementById('loggedInUser').value;
+    let receiver = document.getElementById('receiver');
+
+    function setReceiver(username) {
+        receiver.value = username;
+    }
 
     function enterMessage() {
         messageInput.addEventListener("keydown", event => {
@@ -67,44 +75,30 @@ var loggedInUser = ViewBag.LoggedInUser;
     async function sendMessage() {
         console.log("sendMessage function called");
 
-        let receiver = receiverInput.value.trim();
-        let messageContent = messageInput.value.trim();
+        if (messageInput.value.trim() !== '') {
+            let messageContent = messageInput.value;
+            let receiverValue = receiver.value;
 
-        if (receiver === '' || messageContent === '') {
-            return;
-        }
-
-        let response = await fetch('/Home/SendMessage', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ receiver, messageContent })
-        });
-
-        if (response.ok) {
-            let chatMessage = document.createElement('div');
-            chatMessage.classList.add("chatMessage");
-            chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageContent}`;
-            chatMessagesContainer.appendChild(chatMessage);
-            messageInput.value = '';
-            receiverInput.value = '';
-        } else {
-            console.error("Failed to send message");
-        }
-    }
-
-    function addUserClickHandlers() {
-        let userItems = document.querySelectorAll('.user-item');
-        userItems.forEach(item => {
-            item.addEventListener('click', () => {
-                let username = item.getAttribute('data-username');
-                receiverInput.value = username;
+            let response = await fetch('/Home/SendMessage', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ Receiver: receiverValue, MessageContent: messageContent })
             });
-        });
+
+            if (response.ok) {
+                let chatMessage = document.createElement('div');
+                chatMessage.classList.add("chatMessage");
+                chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageContent}`;
+                chatMessagesContainer.appendChild(chatMessage);
+                messageInput.value = '';
+            } else {
+                alert("Failed to send message");
+            }
+        }
     }
 
     enterMessage();
-    addUserClickHandlers();
 </script>
 </body>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+845f1aa15b96081f4de7bae341175ab65138122a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

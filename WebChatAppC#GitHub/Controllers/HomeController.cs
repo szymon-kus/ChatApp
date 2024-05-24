@@ -107,6 +107,7 @@ namespace WebChatAppC_GitHub.Controllers
             return View();
         }
 
+
         [HttpPost]
         public IActionResult SendMessage([FromBody] SendMessageRequest request)
         {
@@ -149,6 +150,7 @@ namespace WebChatAppC_GitHub.Controllers
 
             return Ok();
         }
+
 
         private void usersFolderFilePathExists()
         {

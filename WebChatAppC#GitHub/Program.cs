@@ -2,7 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSession(); 
+builder.Services.AddSession();
+builder.Services.AddSignalR(); // Dodaj SignalR
 
 var app = builder.Build();
 
@@ -25,5 +26,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Register}/{id?}");
+
+app.MapHub<ChatHub>("/chatHub"); // Mapowanie hubu SignalR
 
 app.Run();
