@@ -1,7 +1,7 @@
 ﻿@{
-ViewData["Title"] = "Chat";
-var loggedInUser = ViewBag.LoggedInUser;
-var messages = ViewBag.Messages;
+    ViewData["Title"] = "Chat";
+    var loggedInUser = ViewBag.LoggedInUser;
+    var sessionId = ViewBag.SessionId;
 }
 
 <head>
@@ -9,96 +9,49 @@ var messages = ViewBag.Messages;
     <title>Chat Application</title>
 </head>
 <body>
-<main>
-    <div id="chatContainer">
-        <div id="user-list">
-            <h2 id="friendsText">Users</h2>
-            <ul id="userList">
-                @foreach (var user in ViewBag.Users)
-                {
-                <li onclick="setReceiver('@user.Username')">
-                    <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
-                    @user.Username
-                </li>
-                }
-            </ul>
+    <main>
+        <div id="chatContainer">
+            <div id="user-list">
+                <h2 id="friendsText">Users</h2>
+                <ul id="userList">
+                    <li>
+                        <a href="#" id="groupChatLink" class="user-link">Group Chat</a>
+                    </li>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <li>
+                            <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
+                            <a href="#" class="user-link" data-username="@user.Username">@user.Username</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="chat-window">
+                <div id="upperNameField">
+                    <div id="usernameContainer">
+                        <p id="usernameText">Group Chat</p>
+                    </div>
+                    <div id="usernameTextContainer">
+                        <p id="websiteName">ChatGpt</p>
+                    </div>
+                </div>
+                <div id="chatMessagesContainer">
+                    <ul id="messageList"></ul>
+                </div>
+                <div id="chatInput">
+                    <input type="hidden" id="loggedInUser" value="@loggedInUser" />
+                    <input type="hidden" id="sessionId" value="@sessionId" />
+                    <input type="text" id="messageInput" placeholder="Type your message here..." />
+                    <button id="sendButton" disabled>Send</button>
+                </div>
+                <div id="logoutContainer">
+                    <form asp-action="Logout" method="post">
+                        <button type="submit" id="logoutButton">Logout</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="chat-window">
-            <div id="upperNameField">
-                <div id="usernameContainer">
-                    <p id="usernameText">Username</p>
-                </div>
-                <div id="usernameTextContainer">
-                    <p id="websiteName">ChatGpt</p>
-                </div>
-            </div>
-            <div id="chatMessagesContainer">
-                @if (messages != null)
-                {
-                @foreach (var message in messages)
-                {
-                <div class="chatMessage">
-                    <strong>@message.Sender:</strong> @message.Content
-                </div>
-                }
-                }
-            </div>
-            <div id="chatInput">
-                <input type="hidden" id="loggedInUser" value="@loggedInUser" />
-                <input type="hidden" id="receiver" value="" />
-                <input type="text" id="messageInput" placeholder="Type your message here..." />
-                <button id="sendButton" onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </div>
-</main>
-<script>
-    console.log("chat.js loaded");
-
-    let messageInput = document.getElementById('messageInput');
-    let chatMessagesContainer = document.getElementById('chatMessagesContainer');
-    let loggedInUser = document.getElementById('loggedInUser').value;
-    let receiver = document.getElementById('receiver');
-
-    function setReceiver(username) {
-        receiver.value = username;
-    }
-
-    function enterMessage() {
-        messageInput.addEventListener("keydown", event => {
-            if (event.key === "Enter") {
-                sendMessage();
-            }
-        });
-    }
-
-    async function sendMessage() {
-        console.log("sendMessage function called");
-
-        if (messageInput.value.trim() !== '') {
-            let messageContent = messageInput.value;
-            let receiverValue = receiver.value;
-
-            let response = await fetch('/Home/SendMessage', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ Receiver: receiverValue, MessageContent: messageContent })
-            });
-
-            if (response.ok) {
-                let chatMessage = document.createElement('div');
-                chatMessage.classList.add("chatMessage");
-                chatMessage.innerHTML = `<strong>${loggedInUser}:</strong> ${messageContent}`;
-                chatMessagesContainer.appendChild(chatMessage);
-                messageInput.value = '';
-            } else {
-                alert("Failed to send message");
-            }
-        }
-    }
-
-    enterMessage();
-</script>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
+    <script src="~/js/chat.js"></script>
 </body>

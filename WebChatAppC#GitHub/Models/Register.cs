@@ -18,6 +18,4 @@ public class RegisterModel
     [Compare("Password", ErrorMessage = "Password and confirmation password do not match.")]
     [JsonIgnore]
     public string ConfirmPassword { get; set; }
-    public List<Message> Messages { get; set; } = new List<Message>();
-
 }

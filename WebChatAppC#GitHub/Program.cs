@@ -1,9 +1,11 @@
+using WebChatAppC_GitHub.Hubs;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
-builder.Services.AddSignalR(); // Dodaj SignalR
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -19,14 +21,14 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseSession(); // Użyj sesji
-
+app.UseSession(); // Use session
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Register}/{id?}");
 
-app.MapHub<ChatHub>("/chatHub"); // Mapowanie hubu SignalR
+// mapowanie do chathuba
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
