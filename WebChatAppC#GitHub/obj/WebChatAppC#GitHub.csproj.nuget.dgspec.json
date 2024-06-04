@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\Jajuzniemoge\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {}
+    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\Jajuzniemoge\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {
+    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\Jajuzniemoge\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
+        "projectUniqueName": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
         "projectName": "WebChatAppC#GitHub",
-        "projectPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\Jajuzniemoge\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
+        "projectPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
         "packagesPath": "C:\\Users\\grzyb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\Jajuzniemoge\\WebChatAppC#GitHub\\obj\\",
+        "outputPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grzyb\\AppData\\Roaming\\NuGet\\NuGet.Config",

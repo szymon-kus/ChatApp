@@ -2,10 +2,11 @@
     ViewData["Title"] = "Chat";
     var loggedInUser = ViewBag.LoggedInUser;
     var sessionId = ViewBag.SessionId;
+    var messages = ViewBag.Messages;
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/Chat.css" />
+    <link rel="stylesheet" href="~/css/Chat.css?v=1.1" />
     <title>Chat Application</title>
 </head>
 <body>
@@ -32,11 +33,25 @@
                         <p id="usernameText">Group Chat</p>
                     </div>
                     <div id="usernameTextContainer">
-                        <p id="websiteName">ChatGpt</p>
+                        <div id="websiteName">
+                            ChatApp
+                        </div>
+                        <div id="logoutContainer">
+                            <form asp-action="Logout" method="post">
+                                <button type="submit" id="logoutButton">Logout</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div id="chatMessagesContainer">
-                    <ul id="messageList"></ul>
+                    <ul id="messageList">
+                        @foreach (var message in messages)
+                        {
+                            <li class="chatMessage">
+                                <span>@message.Sender: @message.Content</span>
+                            </li>
+                        }
+                    </ul>
                 </div>
                 <div id="chatInput">
                     <input type="hidden" id="loggedInUser" value="@loggedInUser" />
@@ -44,14 +59,9 @@
                     <input type="text" id="messageInput" placeholder="Type your message here..." />
                     <button id="sendButton" disabled>Send</button>
                 </div>
-                <div id="logoutContainer">
-                    <form asp-action="Logout" method="post">
-                        <button type="submit" id="logoutButton">Logout</button>
-                    </form>
-                </div>
             </div>
         </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/chat.js"></script>
 </body>

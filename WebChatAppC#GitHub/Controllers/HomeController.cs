@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
 using WebChatAppC_GitHub.Models;
+using System.IO;
 
 namespace WebChatAppC_GitHub.Controllers
 {
@@ -9,11 +10,12 @@ namespace WebChatAppC_GitHub.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly string usersFolderFilePath = Path.Combine(Directory.GetCurrentDirectory(), "users", "user.json");
+        private readonly string messagesFolderFilePath = Path.Combine(Directory.GetCurrentDirectory(), "messages", "messages.json");
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            usersFolderFilePathExists();
+            EnsureFilesExist();
         }
 
         [HttpGet]
@@ -31,6 +33,7 @@ namespace WebChatAppC_GitHub.Controllers
                 return View(model);
             }
 
+            EnsureFilesExist();
             var users = new List<RegisterModel>();
 
             if (System.IO.File.Exists(usersFolderFilePath))
@@ -73,6 +76,7 @@ namespace WebChatAppC_GitHub.Controllers
                 return View(model);
             }
 
+            EnsureFilesExist();
             var users = new List<RegisterModel>();
 
             if (System.IO.File.Exists(usersFolderFilePath))
@@ -85,7 +89,6 @@ namespace WebChatAppC_GitHub.Controllers
 
             if (validUser != null)
             {
-                //session id zeby nie zmienialo uzytkownika podczas odswiezania strony
                 var sessionId = Guid.NewGuid().ToString();
                 HttpContext.Session.SetString("LoggedInUser", model.Username);
                 HttpContext.Session.SetString("SessionId", sessionId);
@@ -100,6 +103,7 @@ namespace WebChatAppC_GitHub.Controllers
         [HttpGet]
         public IActionResult Chat(string sessionId)
         {
+            EnsureFilesExist();
             var sessionUser = HttpContext.Session.GetString("LoggedInUser");
             var sessionStoredId = HttpContext.Session.GetString("SessionId");
 
@@ -120,6 +124,9 @@ namespace WebChatAppC_GitHub.Controllers
             ViewBag.LoggedInUser = sessionUser;
             ViewBag.SessionId = sessionId;
 
+            var messages = LoadMessages();
+            ViewBag.Messages = messages.Where(m => m.Receiver == "Group").ToList();
+
             return View();
         }
 
@@ -130,19 +137,63 @@ namespace WebChatAppC_GitHub.Controllers
             return RedirectToAction("Login");
         }
 
-        private void usersFolderFilePathExists()
+        [HttpGet]
+        public JsonResult ChatMessages()
         {
-            var directoryPath = Path.GetDirectoryName(usersFolderFilePath);
+            EnsureFilesExist();
+            var messages = LoadMessages();
+            var sessionUser = HttpContext.Session.GetString("LoggedInUser");
 
-            if (!Directory.Exists(directoryPath))
+            var filteredMessages = messages.Where(m =>
+                m.Receiver == "Group" ||
+                m.Sender == sessionUser ||
+                m.Receiver == sessionUser
+            ).ToList();
+
+            return Json(filteredMessages);
+        }
+
+        private void EnsureFilesExist()
+        {
+            var usersDirectoryPath = Path.GetDirectoryName(usersFolderFilePath);
+            if (!Directory.Exists(usersDirectoryPath))
             {
-                Directory.CreateDirectory(directoryPath);
+                Directory.CreateDirectory(usersDirectoryPath);
             }
 
-            if (!System.IO.File.Exists(usersFolderFilePath))
+            if (!System.IO.File.Exists(usersFolderFilePath) || !IsValidJsonArray(System.IO.File.ReadAllText(usersFolderFilePath)))
             {
                 System.IO.File.WriteAllText(usersFolderFilePath, "[]");
             }
+
+            var messagesDirectoryPath = Path.GetDirectoryName(messagesFolderFilePath);
+            if (!Directory.Exists(messagesDirectoryPath))
+            {
+                Directory.CreateDirectory(messagesDirectoryPath);
+            }
+
+            if (!System.IO.File.Exists(messagesFolderFilePath) || !IsValidJsonArray(System.IO.File.ReadAllText(messagesFolderFilePath)))
+            {
+                System.IO.File.WriteAllText(messagesFolderFilePath, "[]");
+            }
+        }
+
+        //trzeba manualnie wpisywac bracket a tak dziala popranie :)
+        private bool IsValidJsonArray(string json)
+        {
+            json = json.Trim();
+            return json.StartsWith("[") && json.EndsWith("]");
+        }
+
+        private List<Message> LoadMessages()
+        {
+            if (System.IO.File.Exists(messagesFolderFilePath))
+            {
+                var messagesJson = System.IO.File.ReadAllText(messagesFolderFilePath);
+                return JsonSerializer.Deserialize<List<Message>>(messagesJson);
+            }
+
+            return new List<Message>();
         }
     }
 }

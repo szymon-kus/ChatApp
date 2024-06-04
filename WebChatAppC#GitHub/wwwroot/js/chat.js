@@ -1,45 +1,97 @@
-"use strict";
+document.addEventListener('DOMContentLoaded', function () {
+    const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+    let selectedUser = "";
 
-// SignalR connection setup
-var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+    connection.start().then(function () {
+        console.log("SignalR Connected.");
+        document.getElementById("sendButton").disabled = false;
+    }).catch(function (err) {
+        return console.error(err.toString());
+    });
 
-// Disable the send button until connection is established.
-document.getElementById("sendButton").disabled = true;
-
-connection.on("ReceiveMessage", function (user, message) {
-    let chatMessagesContainer = document.getElementById('chatMessagesContainer');
-    let chatMessage = document.createElement('div');
-    chatMessage.classList.add("chatMessage");
-    chatMessage.innerHTML = `<strong>${user}:</strong> ${message}`;
-    chatMessagesContainer.appendChild(chatMessage);
-});
-
-connection.start().then(function () {
-    document.getElementById("sendButton").disabled = false;
-}).catch(function (err) {
-    return console.error(err.toString());
-});
-
-document.getElementById("sendButton").addEventListener("click", function (event) {
-    sendMessage();
-    event.preventDefault();
-});
-
-document.getElementById("messageInput").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
+    document.getElementById("sendButton").addEventListener("click", function (event) {
         sendMessage();
         event.preventDefault();
-    }
-});
+    });
 
-function sendMessage() {
-    let loggedInUser = document.getElementById('loggedInUser').value;
-    let sessionId = document.getElementById('sessionId').value;
-    let messageInput = document.getElementById('messageInput').value;
-    if (messageInput.trim() !== '') {
-        connection.invoke("SendMessage", loggedInUser, messageInput).catch(function (err) {
-            return console.error(err.toString());
+    document.getElementById("messageInput").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            sendMessage();
+            event.preventDefault();
+        }
+    });
+
+    document.querySelectorAll(".user-link").forEach(function (element) {
+        element.addEventListener("click", function (event) {
+            const username = event.target.dataset.username;
+            if (username) {
+                selectedUser = username;
+                document.getElementById("usernameText").innerText = "Chat with " + selectedUser;
+            } else {
+                selectedUser = "";
+                document.getElementById("usernameText").innerText = "Group Chat";
+            }
+            document.getElementById("messageList").innerHTML = "";
+            loadMessages();
+            event.preventDefault();
         });
-        document.getElementById('messageInput').value = '';
+    });
+
+    connection.on("ReceiveMessage", function (user, message) {
+        if (!selectedUser) {
+            displayMessage(`${user}: ${message}`);
+        }
+    });
+
+    connection.on("ReceivePrivateMessage", function (user, message) {
+        if (user === selectedUser || user === document.getElementById("loggedInUser").value) {
+            displayMessage(`${user} (private): ${message}`);
+        }
+    });
+
+    function sendMessage() {
+        let messageInput = document.getElementById('messageInput').value;
+        let loggedInUser = document.getElementById('loggedInUser').value;
+
+        if (messageInput.trim() !== '') {
+            if (selectedUser) {
+                connection.invoke("SendPrivateMessage", loggedInUser, selectedUser, messageInput).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            } else {
+                connection.invoke("SendMessage", loggedInUser, messageInput).catch(function (err) {
+                    return console.error(err.toString());
+                });
+            }
+            document.getElementById('messageInput').value = '';
+        }
     }
-}
+
+    function displayMessage(message) {
+        let messageList = document.getElementById('messageList');
+        let messageItem = document.createElement('li');
+        messageItem.textContent = message;
+        messageItem.classList.add('chatMessage');
+        messageList.appendChild(messageItem);
+    }
+
+    function loadMessages() {
+        const loggedInUser = document.getElementById('loggedInUser').value;
+
+        fetch('/Home/ChatMessages')
+            .then(response => response.json())
+            .then(messages => {
+                messages.forEach(message => {
+                    if (message.receiver === 'Group' && !selectedUser) {
+                        displayMessage(`${message.sender}: ${message.content}`);
+                    } else if ((message.sender === loggedInUser && message.receiver === selectedUser) ||
+                        (message.sender === selectedUser && message.receiver === loggedInUser)) {
+                        displayMessage(`${message.sender} (private): ${message.content}`);
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading messages:', error));
+    }
+
+    loadMessages();
+});
