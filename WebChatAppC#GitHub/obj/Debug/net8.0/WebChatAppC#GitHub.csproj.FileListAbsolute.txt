@@ -210,3 +210,4 @@ C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\PrivateChat\WebC
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\PrivateChat\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.pdb
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\PrivateChat\WebChatAppC#GitHub\obj\Debug\net8.0\WebChatAppC#GitHub.genruntimeconfig.cache
 C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\PrivateChat\WebChatAppC#GitHub\obj\Debug\net8.0\ref\WebChatAppC#GitHub.dll
+C:\Users\grzyb\Documents\Programowanie\C#\.vs\WebAppChatProject\PrivateChat\WebChatAppC#GitHub\bin\Debug\net8.0\messages\messages.json

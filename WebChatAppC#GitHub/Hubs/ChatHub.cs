@@ -45,7 +45,7 @@ namespace WebChatAppC_GitHub.Hubs
             };
             SaveMessage(chatMessage);
 
-            await Clients.All.SendAsync("ReceiveMessage", user, message);
+            await Clients.Others.SendAsync("ReceiveMessage", user, message); 
         }
 
         public async Task SendPrivateMessage(string sender, string receiverUsername, string message)
@@ -64,7 +64,6 @@ namespace WebChatAppC_GitHub.Hubs
             if (!string.IsNullOrEmpty(receiverConnectionId))
             {
                 await Clients.Client(receiverConnectionId).SendAsync("ReceivePrivateMessage", sender, message);
-                await Clients.Caller.SendAsync("ReceivePrivateMessage", sender, message);
             }
         }
 

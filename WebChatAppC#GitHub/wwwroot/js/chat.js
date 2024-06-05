@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     connection.start().then(function () {
         console.log("SignalR Connected.");
         document.getElementById("sendButton").disabled = false;
+        loadMessages(); 
     }).catch(function (err) {
         return console.error(err.toString());
     });
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     connection.on("ReceiveMessage", function (user, message) {
-        if (!selectedUser) {
+        if (!selectedUser || user === selectedUser) {
             displayMessage(`${user}: ${message}`);
         }
     });
@@ -58,10 +59,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 connection.invoke("SendPrivateMessage", loggedInUser, selectedUser, messageInput).catch(function (err) {
                     return console.error(err.toString());
                 });
+                displayMessage(`${loggedInUser} (private): ${messageInput}`);
             } else {
                 connection.invoke("SendMessage", loggedInUser, messageInput).catch(function (err) {
                     return console.error(err.toString());
                 });
+                displayMessage(`${loggedInUser}: ${messageInput}`);
             }
             document.getElementById('messageInput').value = '';
         }
@@ -82,16 +85,15 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(messages => {
                 messages.forEach(message => {
-                    if (message.receiver === 'Group' && !selectedUser) {
-                        displayMessage(`${message.sender}: ${message.content}`);
-                    } else if ((message.sender === loggedInUser && message.receiver === selectedUser) ||
+                    if ((message.receiver === 'Group' && !selectedUser) || 
+                        (message.sender === loggedInUser && message.receiver === selectedUser) ||
                         (message.sender === selectedUser && message.receiver === loggedInUser)) {
-                        displayMessage(`${message.sender} (private): ${message.content}`);
+                        displayMessage(`${message.sender}: ${message.content}`);
                     }
                 });
             })
             .catch(error => console.error('Error loading messages:', error));
     }
 
-    loadMessages();
+    //loadMssages() zwarijujejejsuej zaraz
 });

@@ -124,9 +124,6 @@ namespace WebChatAppC_GitHub.Controllers
             ViewBag.LoggedInUser = sessionUser;
             ViewBag.SessionId = sessionId;
 
-            var messages = LoadMessages();
-            ViewBag.Messages = messages.Where(m => m.Receiver == "Group").ToList();
-
             return View();
         }
 

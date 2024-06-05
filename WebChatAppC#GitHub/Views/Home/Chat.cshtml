@@ -2,7 +2,6 @@
     ViewData["Title"] = "Chat";
     var loggedInUser = ViewBag.LoggedInUser;
     var sessionId = ViewBag.SessionId;
-    var messages = ViewBag.Messages;
 }
 
 <head>
@@ -45,12 +44,6 @@
                 </div>
                 <div id="chatMessagesContainer">
                     <ul id="messageList">
-                        @foreach (var message in messages)
-                        {
-                            <li class="chatMessage">
-                                <span>@message.Sender: @message.Content</span>
-                            </li>
-                        }
                     </ul>
                 </div>
                 <div id="chatInput">
