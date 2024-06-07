@@ -1,27 +1,43 @@
-﻿@{
-ViewData["Title"] = "Login";
+﻿@model LoginModel
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Login";
 }
 <html>
 <head>
     <link rel="stylesheet" href="~/css/RegisterLogin.css" />
 </head>
 <body>
-<header>
-    <h1>Welcome to ChatGPT</h1>
-</header>
+    <header>
+        <h1>Welcome to LoluśChat</h1>
+    </header>
 
-<main>
-    <div id="mainContainer">
-        <div id="registerLoginContainer">
-            <p id="Signup">Login</p>
-            <form asp-action="Login" method="post">
-                <input class="firstInput" type="text" name="Username" placeholder="Username">
-                <input type="password" name="Password" placeholder="Password">
-                <button type="submit">Login</button>
-            </form>
-            <p id="LoginLink">Don't have an account ? <a asp-controller="Home" asp-action="Register">Register</a></p>
+    <main>
+        <div id="mainContainer">
+            <div id="registerLoginContainer">
+                <p id="Signup">Login</p>
+                <form asp-action="Login" method="post">
+                    <div>
+                        <input class="firstInput" type="text" name="Username" placeholder="Username" value="@Model?.Username">
+                        <span asp-validation-for="Username" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <input type="password" name="Password" placeholder="Password">
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+                <p id="LoginLink">Don't have an account? <a asp-controller="Home" asp-action="Register">Register</a></p>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/additional-methods.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    }
 </body>
 </html>

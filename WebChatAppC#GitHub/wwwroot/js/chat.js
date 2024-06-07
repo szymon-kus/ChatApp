@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
     let selectedUser = "";
+    let loggedInUser = document.getElementById('loggedInUser').value;
 
     connection.start().then(function () {
         console.log("SignalR Connected.");
         document.getElementById("sendButton").disabled = false;
-        loadMessages(); 
     }).catch(function (err) {
         return console.error(err.toString());
     });
@@ -39,32 +39,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     connection.on("ReceiveMessage", function (user, message) {
-        if (!selectedUser || user === selectedUser) {
+        if (!selectedUser) {
             displayMessage(`${user}: ${message}`);
         }
     });
 
     connection.on("ReceivePrivateMessage", function (user, message) {
-        if (user === selectedUser || user === document.getElementById("loggedInUser").value) {
-            displayMessage(`${user} (private): ${message}`);
+        if (user === selectedUser || user === loggedInUser) {
+            displayMessage(`${user}: ${message}`);
         }
+    });
+
+    connection.on("ReceiveNotification", function (notificationMessage) {
+        displayNotification(notificationMessage);
     });
 
     function sendMessage() {
         let messageInput = document.getElementById('messageInput').value;
-        let loggedInUser = document.getElementById('loggedInUser').value;
 
         if (messageInput.trim() !== '') {
             if (selectedUser) {
                 connection.invoke("SendPrivateMessage", loggedInUser, selectedUser, messageInput).catch(function (err) {
                     return console.error(err.toString());
                 });
-                displayMessage(`${loggedInUser} (private): ${messageInput}`);
             } else {
                 connection.invoke("SendMessage", loggedInUser, messageInput).catch(function (err) {
                     return console.error(err.toString());
                 });
-                displayMessage(`${loggedInUser}: ${messageInput}`);
             }
             document.getElementById('messageInput').value = '';
         }
@@ -73,27 +74,43 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayMessage(message) {
         let messageList = document.getElementById('messageList');
         let messageItem = document.createElement('li');
+        messageItem.classList.add("chatMessage");
         messageItem.textContent = message;
-        messageItem.classList.add('chatMessage');
         messageList.appendChild(messageItem);
+        messageList.scrollTop = messageList.scrollHeight;
+    }
+
+    function displayNotification(message) {
+        let notificationArea = document.getElementById('notificationArea');
+        let notification = document.createElement('div');
+        notification.classList.add('notification');
+        notification.textContent = message;
+
+        notificationArea.appendChild(notification);
+        notificationArea.style.display = 'block';
+
+        setTimeout(() => {
+            notificationArea.removeChild(notification);
+            if (notificationArea.childElementCount === 0) {
+                notificationArea.style.display = 'none';
+            }
+        }, 5000);
     }
 
     function loadMessages() {
-        const loggedInUser = document.getElementById('loggedInUser').value;
-
         fetch('/Home/ChatMessages')
             .then(response => response.json())
             .then(messages => {
+                document.getElementById('messageList').innerHTML = '';
                 messages.forEach(message => {
-                    if ((message.receiver === 'Group' && !selectedUser) || 
-                        (message.sender === loggedInUser && message.receiver === selectedUser) ||
-                        (message.sender === selectedUser && message.receiver === loggedInUser)) {
+                    if (message.receiver === 'Group' && !selectedUser) {
                         displayMessage(`${message.sender}: ${message.content}`);
+                    } else if ((message.sender === loggedInUser && message.receiver === selectedUser) ||
+                        (message.sender === selectedUser && message.receiver === loggedInUser)) {
+                        displayMessage(`${message.sender} (private): ${message.content}`);
                     }
                 });
             })
             .catch(error => console.error('Error loading messages:', error));
     }
-
-    //loadMssages() zwarijujejejsuej zaraz
 });

@@ -64,20 +64,21 @@ body {
         }
 
 .status-indicator {
+    display: inline-block;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    display: inline-block;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
     .status-indicator.online {
-        background-color: hsl(134, 61%, 44%);
+        background-color: green;
     }
 
     .status-indicator.offline {
-        background-color: hsl(0, 0%, 25%);
+        background-color: gray;
     }
+
 
 .chat-window {
     flex: 1;
@@ -214,3 +215,21 @@ body {
         color: green;
         margin-right: 5px;
     }
+
+#notificationArea {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: none;
+}
+
+.notification {
+    background-color: hsl(0, 3%, 19%);
+    border: 1px solid hsl(271, 76%, 44%);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 300px;
+    box-shadow: 1px 1px 10px hsl(0, 0%, 0%), -1px -1px 10px hsl(0, 0%, 0%);
+}

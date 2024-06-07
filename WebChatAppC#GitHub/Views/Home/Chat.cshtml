@@ -2,10 +2,11 @@
     ViewData["Title"] = "Chat";
     var loggedInUser = ViewBag.LoggedInUser;
     var sessionId = ViewBag.SessionId;
+    var messages = ViewBag.Messages;
 }
 
 <head>
-    <link rel="stylesheet" href="~/css/Chat.css?v=1.1" />
+    <link rel="stylesheet" href="~/css/Chat.css?v=1.0" />
     <title>Chat Application</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
                     @foreach (var user in ViewBag.Users)
                     {
                         <li>
-                            <span class="status-indicator @((user.Username == loggedInUser) ? "online" : "offline")"></span>
+                            <span class="status-indicator @((user.Username == ViewBag.LoggedInUser) ? "online" : "offline")"></span>
                             <a href="#" class="user-link" data-username="@user.Username">@user.Username</a>
                         </li>
                     }
@@ -33,7 +34,7 @@
                     </div>
                     <div id="usernameTextContainer">
                         <div id="websiteName">
-                            ChatApp
+                            LoluśChat
                         </div>
                         <div id="logoutContainer">
                             <form asp-action="Logout" method="post">
@@ -44,15 +45,23 @@
                 </div>
                 <div id="chatMessagesContainer">
                     <ul id="messageList">
+                        @foreach (var message in ViewBag.Messages)
+                        {
+                            <li class="chatMessage">
+                                @message.Sender: @message.Content
+                            </li>
+                        }
                     </ul>
                 </div>
                 <div id="chatInput">
-                    <input type="hidden" id="loggedInUser" value="@loggedInUser" />
-                    <input type="hidden" id="sessionId" value="@sessionId" />
+                    <input type="hidden" id="loggedInUser" value="@ViewBag.LoggedInUser" />
+                    <input type="hidden" id="sessionId" value="@ViewBag.SessionId" />
                     <input type="text" id="messageInput" placeholder="Type your message here..." />
                     <button id="sendButton" disabled>Send</button>
                 </div>
             </div>
+        </div>
+        <div id="notificationArea">
         </div>
     </main>
     <script src="~/js/signalr/dist/browser/signalr.js"></script>

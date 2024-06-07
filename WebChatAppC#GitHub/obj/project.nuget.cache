@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2NBE+NwV3v2GNYbsgTxvnwcn0N2Xw41jjX/efh11h/h34RUUDvTvKn4dGp3kECxmrrKmAtsM1c3fEfdiG+Oehw==",
+  "dgSpecHash": "k2tm1gh3UGauNPKK45Q9N7Jxwb9ptqKO+wR9dOu1KUSspKtrueYRXUAILvqoQxOE1PbHP0YP52QHy7A3zteQMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\PrivateChat\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
+  "projectFilePath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grzyb\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\grzyb\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",

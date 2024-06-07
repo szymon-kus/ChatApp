@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Threading.Tasks;
 using WebChatAppC_GitHub.Models;
 
 namespace WebChatAppC_GitHub.Hubs
@@ -11,27 +12,29 @@ namespace WebChatAppC_GitHub.Hubs
     public class ChatHub : Hub
     {
         private static readonly ConcurrentDictionary<string, string> _userConnections = new ConcurrentDictionary<string, string>();
-        private readonly string messagesFolderFilePath = Path.Combine(Directory.GetCurrentDirectory(), "messages", "messages.json");
+        private static readonly ConcurrentDictionary<string, bool> _onlineUsers = new ConcurrentDictionary<string, bool>();
+        private readonly string messagesFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "messages");
 
-        public override Task OnConnectedAsync()
+        public override async Task OnConnectedAsync()
         {
             var username = Context.GetHttpContext().Session.GetString("LoggedInUser");
             if (!string.IsNullOrEmpty(username))
             {
                 _userConnections[Context.ConnectionId] = username;
-                Clients.All.SendAsync("ReceiveMessage", "System", $"{username} has joined the chat.");
+                _onlineUsers[username] = true;
+                await Clients.All.SendAsync("UpdateOnlineStatus", _onlineUsers);
             }
-            return base.OnConnectedAsync();
+            await base.OnConnectedAsync();
         }
 
-        public override Task OnDisconnectedAsync(Exception exception)
+        public override async Task OnDisconnectedAsync(Exception exception)
         {
-            _userConnections.TryRemove(Context.ConnectionId, out var username);
-            if (!string.IsNullOrEmpty(username))
+            if (_userConnections.TryRemove(Context.ConnectionId, out var username))
             {
-                Clients.All.SendAsync("ReceiveMessage", "System", $"{username} has left the chat.");
+                _onlineUsers.TryRemove(username, out _);
+                await Clients.All.SendAsync("UpdateOnlineStatus", _onlineUsers);
             }
-            return base.OnDisconnectedAsync(exception);
+            await base.OnDisconnectedAsync(exception);
         }
 
         public async Task SendMessage(string user, string message)
@@ -43,9 +46,18 @@ namespace WebChatAppC_GitHub.Hubs
                 Content = message,
                 Timestamp = DateTime.Now
             };
-            SaveMessage(chatMessage);
+            SaveMessage(chatMessage, "Group");
 
-            await Clients.Others.SendAsync("ReceiveMessage", user, message); 
+            await Clients.All.SendAsync("ReceiveMessage", user, message);
+
+            var notificationMessage = $"{user} sent a message to the group chat.";
+            foreach (var connection in _userConnections)
+            {
+                if (connection.Value != user)
+                {
+                    await Clients.Client(connection.Key).SendAsync("ReceiveNotification", notificationMessage);
+                }
+            }
         }
 
         public async Task SendPrivateMessage(string sender, string receiverUsername, string message)
@@ -59,30 +71,42 @@ namespace WebChatAppC_GitHub.Hubs
                 Content = message,
                 Timestamp = DateTime.Now
             };
-            SaveMessage(chatMessage);
+            SaveMessage(chatMessage, receiverUsername);
+            SaveMessage(chatMessage, sender);
 
             if (!string.IsNullOrEmpty(receiverConnectionId))
             {
                 await Clients.Client(receiverConnectionId).SendAsync("ReceivePrivateMessage", sender, message);
             }
+            await Clients.Caller.SendAsync("ReceivePrivateMessage", sender, message);
+
+            var notificationMessage = $"{sender} sent you a message.";
+            await Clients.Client(receiverConnectionId).SendAsync("ReceiveNotification", notificationMessage);
         }
 
-        private void SaveMessage(Message message)
+        private void SaveMessage(Message message, string chatType)
         {
-            var messages = LoadMessages();
-            messages.Add(message);
-            var messagesJson = JsonSerializer.Serialize(messages);
-            File.WriteAllText(messagesFolderFilePath, messagesJson);
-        }
+            var chatPath = Path.Combine(messagesFolderPath, $"{chatType}.json");
+            var messages = new List<Message>();
 
-        private List<Message> LoadMessages()
-        {
-            if (File.Exists(messagesFolderFilePath))
+            if (File.Exists(chatPath))
             {
-                var messagesJson = File.ReadAllText(messagesFolderFilePath);
-                return JsonSerializer.Deserialize<List<Message>>(messagesJson);
+                var messagesJson = File.ReadAllText(chatPath);
+                messages = JsonSerializer.Deserialize<List<Message>>(messagesJson);
             }
-            return new List<Message>();
+
+            messages.Add(message);
+            var updatedMessagesJson = JsonSerializer.Serialize(messages);
+            File.WriteAllText(chatPath, updatedMessagesJson);
+        }
+
+        public async Task SendNotification(string receiverUsername, string notificationMessage)
+        {
+            var receiverConnectionId = _userConnections.FirstOrDefault(u => u.Value == receiverUsername).Key;
+            if (!string.IsNullOrEmpty(receiverConnectionId))
+            {
+                await Clients.Client(receiverConnectionId).SendAsync("ReceiveNotification", notificationMessage);
+            }
         }
     }
 }

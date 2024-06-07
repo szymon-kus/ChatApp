@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1e667db95e4525fd9873b09763606a28e5683f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c930b41500500061f9356f6014660adf4441a68")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebChatAppC#GitHub")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
