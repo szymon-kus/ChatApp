@@ -1,4 +1,69 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Chat";
+    var loggedInUser = ViewBag.LoggedInUser;
+    var sessionId = ViewBag.SessionId;
+    var messages = ViewBag.Messages;
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/Chat.css?v=1.0" />
+    <title>Chat Application</title>
+</head>
 <body>
-	<h1>Siema eniu :D</h1>
+    <main>
+        <div id="chatContainer">
+            <div id="user-list">
+                <h2 id="friendsText">Users</h2>
+                <ul id="userList">
+                    <li>
+                        <a href="#" id="groupChatLink" class="user-link">Group Chat</a>
+                    </li>
+                    @foreach (var user in ViewBag.Users)
+                    {
+                        <li>
+                            <span class="status-indicator @((user.Username == ViewBag.LoggedInUser) ? "online" : "offline")"></span>
+                            <a href="#" class="user-link" data-username="@user.Username">@user.Username</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="chat-window">
+                <div id="upperNameField">
+                    <div id="usernameContainer">
+                        <p id="usernameText">Group Chat</p>
+                    </div>
+                    <div id="usernameTextContainer">
+                        <div id="websiteName">
+                            LoluśChat
+                        </div>
+                        <div id="logoutContainer">
+                            <form asp-action="Logout" method="post">
+                                <button type="submit" id="logoutButton">Logout</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="chatMessagesContainer">
+                    <ul id="messageList">
+                        @foreach (var message in ViewBag.Messages)
+                        {
+                            <li class="chatMessage">
+                                @message.Sender: @message.Content
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <div id="chatInput">
+                    <input type="hidden" id="loggedInUser" value="@ViewBag.LoggedInUser" />
+                    <input type="hidden" id="sessionId" value="@ViewBag.SessionId" />
+                    <input type="text" id="messageInput" placeholder="Type your message here..." />
+                    <button id="sendButton" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+        <div id="notificationArea">
+        </div>
+    </main>
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
 </body>

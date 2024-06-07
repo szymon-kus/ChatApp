@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using WebChatAppC_GitHub.Models;
 using WebChatAppC_GitHub.Password_Validation;
 
 public class RegisterModel

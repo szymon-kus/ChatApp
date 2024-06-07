@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a22a6ab-16d0-4dfc-8f00-65dc75048238" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/Controllers/HomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/Models/Register.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/Models/Register.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/Views/Home/Chat.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/Views/Home/Chat.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/WebChatAppC#GitHub.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/WebChatAppC#GitHub.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/WebChatAppC#GitHub.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/users/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/bin/Debug/net8.0/users/user.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/WebChatAppC#GitHub.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/ref/WebChatAppC#GitHub.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/ref/WebChatAppC#GitHub.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/refint/WebChatAppC#GitHub.dll" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/Debug/net8.0/refint/WebChatAppC#GitHub.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/WebChatAppC#GitHub.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/WebChatAppC#GitHub.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebChatAppC#GitHub/users/user.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebChatAppC#GitHub/users/user.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2gsbcr1XX4LRgqG0mRTCmR4zQgV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "test",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-WS-241.15989.105" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a22a6ab-16d0-4dfc-8f00-65dc75048238" name="Changes" comment="" />
+      <created>1716489315167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716489315167</updated>
+      <workItem from="1716489316696" duration="18000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

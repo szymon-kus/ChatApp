@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {}
+    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {}
   },
   "projects": {
-    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {
+    "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
+        "projectUniqueName": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
         "projectName": "WebChatAppC#GitHub",
-        "projectPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
+        "projectPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\WebChatAppC#GitHub.csproj",
         "packagesPath": "C:\\Users\\grzyb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\WebChatAppC#GitHub\\WebChatAppC#GitHub\\obj\\",
+        "outputPath": "C:\\Users\\grzyb\\Documents\\Programowanie\\C#\\.vs\\WebAppChatProject\\FinalPush\\WebChatAppC#GitHub\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\grzyb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

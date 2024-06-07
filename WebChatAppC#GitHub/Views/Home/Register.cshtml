@@ -5,11 +5,11 @@
 @model RegisterModel
 
 <head>
-    <link rel="stylesheet" href="~/css/RegisterLogin.css"/>
+    <link rel="stylesheet" href="~/css/RegisterLogin.css" />
 </head>
 <body>
     <header>
-        <h1>Welcome to ChatGPT</h1>
+        <h1>Welcome to LoluśChat</h1>
     </header>
 
     <main>
@@ -17,13 +17,13 @@
             <div id="registerLoginContainer">
                 <p id="Signup">Signup</p>
                 <form asp-action="Register" method="post">
-                    <input class="firstInput" asp-for="Username" placeholder="Username"/>
+                    <input class="firstInput" asp-for="Username" placeholder="Username" />
                     <span asp-validation-for="Username" class="text-danger"></span>
 
-                    <input type="password" asp-for="Password" placeholder="Create password"/>
+                    <input type="password" asp-for="Password" placeholder="Create password" />
                     <span asp-validation-for="Password" class="text-danger"></span>
 
-                    <input type="password" asp-for="ConfirmPassword" placeholder="Confirm password"/>
+                    <input type="password" asp-for="ConfirmPassword" placeholder="Confirm password" />
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
 
                     <button type="submit">Signup</button>

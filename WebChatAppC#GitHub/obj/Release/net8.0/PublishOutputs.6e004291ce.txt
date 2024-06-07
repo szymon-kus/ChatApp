@@ -1,0 +1,10 @@
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/WebChatAppC#GitHub
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/appsettings.Development.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/appsettings.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/users/user.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/WebChatAppC#GitHub.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/WebChatAppC#GitHub.deps.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/WebChatAppC#GitHub.runtimeconfig.json
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/WebChatAppC#GitHub.pdb
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/Newtonsoft.Json.dll
+/Users/szymonkus/Desktop/Projekty IT/C#/ChatApp/testChat/ChatApp/publish/System.Net.WebSockets.WebSocketProtocol.dll
